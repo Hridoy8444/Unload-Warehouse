@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import googleLogo from '../../Images/Logo/googleLogo.png';
 import auth from '../../firebase.init';
 
 const Login = () => {
@@ -61,24 +62,30 @@ const Login = () => {
     return (
         <div className='w-50 mx-auto'>
             <h2 className='text-success mt-2 text-center'>Please Login!</h2>
-            <Form onSubmit>
+            <Form onSubmit={handleToSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control className='input-field'  type="email" placeholder="Enter email" required />
+                    <Form.Control className='input-field' onBlur={handleEmailBlur} type="email" placeholder="Enter email" required />
 
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control className='input-field'  type="password" placeholder="Password" required />
+                    <Form.Control className='input-field' onBlur={handlePasswordBlur} type="password" placeholder="Password" required />
                 </Form.Group>
-                
+                <p style={{color: 'red'}}>{error}</p>
                 <Button className='input-field field-color' style={{ width: '100%', padding: '10px' }} variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
             
-           
+            <p className='text-center mt-2'>Forget Password? <button to={"/register"} className='text-primary text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
+            <ToastContainer></ToastContainer>
+            <p>New to Smile Sharp Photography? <Link to={'/signup'} className='text-primary text-decoration-none' onClick={navigateToRegister}>Please Register</Link></p>
+            <div>
+                <p onClick={() => signInWithGoogle()} className='social-media-container'><img height={32} src={googleLogo} alt="" /> <small>Continue With Google</small></p>
+               
+            </div>
            
         </div>
     );
