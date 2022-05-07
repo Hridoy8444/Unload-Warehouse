@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "Royal Enfield Classic 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
+        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
+        "price": "1023",
+        "quantity": "20",
+        "supplier": "Royal Enfield"
+        
+
+    },
+    {
+        "id": 2,
+        "name": "Royal Enfield Classic 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
+        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
+        "price": "1023",
+        "quantity": "20",
+        "supplier": "Royal Enfield"
+
+
+    },
+    {
+        "id": 3,
+        "name": "Royal Enfield Classic 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
+        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
+        "price": "1023",
+        "quantity": "20",
+        "supplier": "Royal Enfield"
+
+
+    },
+    {
+        "id": 4,
+        "name": "Royal Enfield Classic 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
+        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
+        "price": "1023",
+        "quantity": "20",
+        "supplier": "Royal Enfield"
+
+
+    },
+    {
+        "id": 5,
+        "name": "Royal Enfield Classic 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
+        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
+        "price": "1023",
+        "quantity": "20",
+        "supplier": "Royal Enfield"
+
+
+    },
+    {
+        "id": 6,
+        "name": "Royal Enfield Classic 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
+        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
+        "price": "1023",
+        "quantity": "20",
+        "supplier": "Royal Enfield"
+
+
+    }
+]
