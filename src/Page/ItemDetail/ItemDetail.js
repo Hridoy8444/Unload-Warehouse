@@ -43,6 +43,7 @@ const ItemDetail = () => {
     const handleReStock = event => {
         event.preventDefault();
         const value = event.target.restock.value;
+        console.log(value);
         if(value < 0){
             return toast('Please enter positive value!')
         }
@@ -60,6 +61,7 @@ const ItemDetail = () => {
         .then(data => {
             console.log('success', data);
             setIsReload(!reload);
+            event.target.reset();
             
         })
 
@@ -79,8 +81,8 @@ const ItemDetail = () => {
 
                 </div>
                 <div>
-                    <input className='mb-1 ' type='number' pattern='[0-9]'></input>
-                    <input onClick={handleReStock} className='mb-1 pe-5 ps-5' name='restock' type="submit" value="ReStock" />
+                    <input onBlur={handleReStock} className='mb-1 ' type='number' pattern='[0-9]' name='restock'></input>
+                    <input  className='mb-1 pe-5 ps-5' name='restock' type="submit" value="restock" />
                     <Button>Manage Inventory</Button>
                     <ToastContainer></ToastContainer>
                 </div>
