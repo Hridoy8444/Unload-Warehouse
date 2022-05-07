@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ItemDetail = () => {
     const { itemId } = useParams();
     const [item, setItem] = useState({});
+    const [reload, setIsReload] =useState(true)
 
     useEffect(() => {
         const url = `http://localhost:5000/item/${itemId}`;
@@ -13,7 +16,54 @@ const ItemDetail = () => {
             .then(data => setItem(data));
 
 
-    }, [])
+    }, [reload]);
+    const handleDeliver = event => {
+        event.preventDefault();
+        const quantity = item.quantity -1;
+        if(quantity < 0){
+            return toast('Product Out of Stock')
+        }
+        
+        const updateQuantity = {quantity};
+        const url = `http://localhost:5000/item/${itemId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('success', data);
+            setIsReload(!reload);
+            
+        })
+    };
+    const handleReStock = event => {
+        event.preventDefault();
+        const value = event.target.restock.value;
+        if(value < 0){
+            return toast('Please enter positive value!')
+        }
+        const quantity = item.quantity + parseInt(value);
+        const updateQuantity = { quantity };
+        const url = `http://localhost:5000/item/${itemId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log('success', data);
+            setIsReload(!reload);
+            
+        })
+
+    }
     return (
         <div>
             <h2>Item detail</h2>
@@ -25,13 +75,14 @@ const ItemDetail = () => {
                     <p>Available Item: {item.quantity}</p>
                     <p><small>{item.description}</small></p>
                     <p>Price: {item.price}</p>
-                    <Button className='btn'>Delivered</Button>
+                    <Button onClick={handleDeliver} className='btn'>Delivered</Button>
 
                 </div>
                 <div>
                     <input className='mb-1 ' type='number' pattern='[0-9]'></input>
-                    <input className='mb-1 pe-5 ps-5' type="submit" value="ReStock" />
+                    <input onClick={handleReStock} className='mb-1 pe-5 ps-5' name='restock' type="submit" value="ReStock" />
                     <Button>Manage Inventory</Button>
+                    <ToastContainer></ToastContainer>
                 </div>
             </div>
 
