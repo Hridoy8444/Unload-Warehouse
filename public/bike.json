@@ -12,56 +12,56 @@
     },
     {
         "id": 2,
-        "name": "Royal Enfield Classic 350",
-        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
-        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
-        "price": "1023",
-        "quantity": "20",
-        "supplier": "Royal Enfield"
+        "name": "KTMRC 200",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1634563290.png?width=360",
+        "description": "The KTM RC 200 is one of the 9 different products from KTM on sale in India. There is only one version on sale and comes with a sticker price of Rs Rs 2.09 Lakh.",
+        "price": "1233",
+        "quantity": "17",
+        "supplier": "KTM"
 
 
     },
     {
         "id": 3,
-        "name": "Royal Enfield Classic 350",
-        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
-        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
-        "price": "1023",
-        "quantity": "20",
+        "name": "Royal Enfield Bullet 350",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1629115092.png?width=360",
+        "description": "The Royal Enfield Bullet 350 is one of the 7 different products from Royal Enfield on sale in India. It has a starting price of Rs 145153 and comes in 2 different versions",
+        "price": "1050",
+        "quantity": "25",
         "supplier": "Royal Enfield"
 
 
     },
     {
         "id": 4,
-        "name": "Royal Enfield Classic 350",
-        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
-        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
-        "price": "1023",
-        "quantity": "20",
+        "name": "Royal Enfield Scram 411",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1647339035.jpg?width=360",
+        "description": "The Royal Enfield Scram 411 is one of the 7 different products from Royal Enfield on sale in India. It has a starting price of Rs 203000 and comes in 3 different versions.",
+        "price": "1078",
+        "quantity": "17",
         "supplier": "Royal Enfield"
 
 
     },
     {
         "id": 5,
-        "name": "Royal Enfield Classic 350",
-        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
-        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
-        "price": "1023",
-        "quantity": "20",
-        "supplier": "Royal Enfield"
+        "name": "KTM RC 125",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1649065922.jpg?width=360",
+        "description": "The KTM RC 125 is one of the 9 different products from KTM on sale in India. There is only one version on sale and comes with a sticker price of Rs Rs 1.82 Lakh",
+        "price": "990",
+        "quantity": "12",
+        "supplier": "KTM"
 
 
     },
     {
         "id": 6,
-        "name": "Royal Enfield Classic 350",
-        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1630496398.png?width=360",
-        "description": "The Royal Enfield Classic 350 is one of the 7 different products from Royal Enfield on sale in India.",
-        "price": "1023",
-        "quantity": "20",
-        "supplier": "Royal Enfield"
+        "name": "KTM RC 390",
+        "img": "https://images.91wheels.com//assets/b_images/main/models/profile/profile1629643009.png?width=360",
+        "description": "The KTM RC 390 is one of the 9 different products from KTM on sale in India. There is only one version on sale and comes with a sticker price of Rs",
+        "price": "1122",
+        "quantity": "19",
+        "supplier": "KTM"
 
 
     }
