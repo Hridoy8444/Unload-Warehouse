@@ -17,7 +17,7 @@ const ManageItem = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://shrouded-dusk-31144.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -54,7 +54,7 @@ const ManageItem = () => {
                                         {item.description}
                                     </Card.Text>
                                     <Card.Text>
-                                        Price: {item.price}
+                                        Price: $  {item.price}
                                     </Card.Text>
 
 

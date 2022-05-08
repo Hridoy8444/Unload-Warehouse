@@ -59,7 +59,7 @@ const SignUp = () => {
         navigate('/register')
     }
     return (
-        <div className='d-flex'>
+        <div className='d-flex item-container'>
             <div>
             <img className='m-5' height={350} src={loginPng} alt="" />
             </div>

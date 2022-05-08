@@ -13,7 +13,7 @@ const ItemDetail = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://shrouded-dusk-31144.herokuapp.com/item/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -28,7 +28,7 @@ const ItemDetail = () => {
         }
         
         const updateQuantity = {quantity};
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://shrouded-dusk-31144.herokuapp.com/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -52,7 +52,7 @@ const ItemDetail = () => {
         }
         const quantity = item.quantity + parseInt(value);
         const updateQuantity = { quantity };
-        const url = `http://localhost:5000/item/${itemId}`;
+        const url = `https://shrouded-dusk-31144.herokuapp.com/item/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -82,7 +82,7 @@ const ItemDetail = () => {
                     <p>Supplier Name: {item.supplier}</p>
                     <p>Available Item: {item.quantity}</p>
                     <p><small>{item.description}</small></p>
-                    <p>Price: {item.price}</p>
+                    <p>Price: $  {item.price}</p>
                     <Button onClick={handleDeliver} className='btn'>Delivered</Button>
 
                 </div>
@@ -96,7 +96,7 @@ const ItemDetail = () => {
                             Submit
                         </Button>
                         <div className='my-4 text-end'>
-                            <Link to='/manageInventory' className='btn btn-outline-danger w-100'>Manage Inventories</Link>
+                            <Link to='/manage' className='btn btn-outline-danger w-100'>Manage Items</Link>
                         </div>
                     </Form>         
             </div>

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Item.css';
 
 const Item = ({item}) => {
-    const {_id, name, img, description, supplier, price} = item;
+    const {_id, name, img, description, supplier, price, quantity} = item;
     const navigate = useNavigate();
 
     const navigateToItemDetail = id => {
@@ -20,10 +20,13 @@ const Item = ({item}) => {
                         Supplier: {supplier}
                     </Card.Text>
                     <Card.Text>
+                        Available: {quantity}
+                    </Card.Text>
+                    <Card.Text>
                         {description}
                     </Card.Text>
                     <Card.Text>
-                        Price: {price}
+                        Price: $  {price}
                     </Card.Text>
                     
                     <Button className='card-btn' onClick={() => navigateToItemDetail(_id)} variant="primary">Update</Button>

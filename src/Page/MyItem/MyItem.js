@@ -12,7 +12,7 @@ const MyItem = () => {
     useEffect(() => {
         const getItem = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/product?email=${email}`;
+            const url = `https://shrouded-dusk-31144.herokuapp.com/product?email=${email}`;
             const { data } = await axios.get(url);
             console.log(data);
             setItem(data);
@@ -24,7 +24,7 @@ const MyItem = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://shrouded-dusk-31144.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -60,7 +60,7 @@ const MyItem = () => {
                                         {item.description}
                                     </Card.Text>
                                     <Card.Text>
-                                        Price: {item.price}
+                                        Price: $  {item.price}
                                     </Card.Text>
 
 

@@ -53,7 +53,7 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
     if (authUser) {
-
+        
 
         navigate(from, { replace: true });
     }
@@ -62,7 +62,7 @@ const Login = () => {
         toast('Sent email');
     }
     return (
-        <div className='d-flex'>
+        <div className='d-flex item-container'>
             <div>
                 <img className='m-5' height={350} src={loginPng} alt="" />
             </div>
