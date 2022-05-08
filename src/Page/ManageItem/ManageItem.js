@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
+import './ManageItem.css';
 
 
 const ManageItem = () => {
@@ -32,7 +33,7 @@ const ManageItem = () => {
     return (
         <div >
             <h2 className='text-center'>Manage Your Item</h2>
-            <div className='d-flex'>
+            <div className='d-flex manage-container'>
                 <div>
                     <Button onClick={handleToNavigate}>Add Item</Button>
                 </div>
@@ -57,7 +58,7 @@ const ManageItem = () => {
                                     </Card.Text>
 
 
-                                </Card.Body><Button className='card-btn' onClick={handleDelete} variant="primary">Delete</Button>
+                                </Card.Body><Button className='card-btn' onClick={() =>handleDelete(item._id) } variant="primary">Delete</Button>
                             </Card>
 
                         </div>)

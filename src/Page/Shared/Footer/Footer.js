@@ -11,7 +11,7 @@ const Footer = () => {
         
         <div className='footer-container text-light text-center'>
             <span>
-                © {today.getFullYear()} Smile Sharp Photography
+                © {today.getFullYear()} Unload Warehouse
             </span>
             <div className='logo-container'>
                 <p>Contract with us</p>

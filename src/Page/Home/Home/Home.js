@@ -15,13 +15,15 @@ import pic3 from '../../../Images/partner/pic3.png';
 import pic4 from '../../../Images/partner/pic4.png';
 import pic5 from '../../../Images/partner/pic5.png';
 import pic6 from '../../../Images/partner/pic6.png';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <Items></Items>
-            <Button className=''>Manage Items</Button>
+            <Button ><Link className='text-light' to='/manage'>Manage Item</Link></Button>
             <h2 className='m-3 text-center'>Our Services</h2>
             <div className='row m-3 g-3'>
                 <div className='col-12 col-md-6 col-lg-4 d-flex  ' >
@@ -71,8 +73,8 @@ const Home = () => {
             </div>
             <div>
                 <h2 className='text-center'>Our Partners</h2>
-                <div className='d-flex w-50 mx-auto justify-content-center'>
-                    <img className='ps-3'  height={70} src={pic1} alt="" />
+                <div className=' picture-container'>
+                    <img className='ps-3 '  height={70} src={pic1} alt="" />
                     <img className='ps-3' height={70} src={pic2} alt="" />
                     <img className='ps-3' height={70} src={pic3} alt="" />
                     <img className='ps-3' height={70} src={pic4} alt="" />

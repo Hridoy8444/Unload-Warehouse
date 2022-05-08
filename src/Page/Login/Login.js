@@ -87,7 +87,7 @@ const Login = () => {
 
                 <p className='text-center mt-2'>Forget Password? <button to={"/register"} className='text-primary text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
                 <ToastContainer></ToastContainer>
-                <p>New to Smile Sharp Photography? <Link to={'/signup'} className='text-primary text-decoration-none' onClick={navigateToRegister}>Please Register</Link></p>
+                <p>New to Unload Warehouse? <Link to={'/signup'} className='text-primary text-decoration-none' onClick={navigateToRegister}>Please Register</Link></p>
                 <div className='w-50 mx-auto'>
                     <p onClick={() => signInWithGoogle()} className='social-media-container'><img height={32} src={googleLogo} alt="" /> <small>Continue With Google</small></p>
 

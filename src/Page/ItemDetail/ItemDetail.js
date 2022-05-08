@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import './ItemDetail.css';
 
 const ItemDetail = () => {
     const { itemId } = useParams();
@@ -74,7 +75,7 @@ const ItemDetail = () => {
     return (
         <div>
             <h2>Item detail</h2>
-            <div className='d-flex'>
+            <div className='d-flex item-container'>
                 <div className='w-50 mx-auto'>
                     <img src={item.img} alt="" />
                     <p>Name: {item.name}</p>

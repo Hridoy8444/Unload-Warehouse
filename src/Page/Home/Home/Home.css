@@ -1,0 +1,7 @@
+@media only screen and (max-width: 576px){
+    .picture-container img{
+        flex-direction: column;
+        
+    }
+}
+
