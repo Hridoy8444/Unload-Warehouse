@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useForm } from "react-hook-form";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 
 const ItemDetail = () => {
     const { itemId } = useParams();
     const [item, setItem] = useState({});
-    const [reload, setIsReload] =useState(true)
+    const [reload, setIsReload] =useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const url = `http://localhost:5000/item/${itemId}`;
@@ -65,12 +67,15 @@ const ItemDetail = () => {
             
         })
 
+    };
+    const handleNavigate = () => {
+        navigate('/manage');
     }
     return (
         <div>
             <h2>Item detail</h2>
             <div className='d-flex'>
-                <div>
+                <div className='w-50 mx-auto'>
                     <img src={item.img} alt="" />
                     <p>Name: {item.name}</p>
                     <p>Supplier Name: {item.supplier}</p>
@@ -80,12 +85,19 @@ const ItemDetail = () => {
                     <Button onClick={handleDeliver} className='btn'>Delivered</Button>
 
                 </div>
-                <div>
-                    <input onBlur={handleReStock} className='mb-1 ' type='number' pattern='[0-9]' name='restock'></input>
-                    <input  className='mb-1 pe-5 ps-5' name='restock' type="submit" value="restock" />
-                    <Button>Manage Inventory</Button>
-                    <ToastContainer></ToastContainer>
-                </div>
+                <Form onSubmit={handleReStock}>
+                        <Form.Group className="mb-3" controlId="formBasicRestock">
+                            <Form.Label className="d-flex justify-content-center text-success">Restock the Item</Form.Label>
+                            <Form.Control type="number" name="restock" placeholder="Restock amount" />
+
+                        </Form.Group>
+                        <Button className='w-100' variant="success" type="submit">
+                            Submit
+                        </Button>
+                        <div className='my-4 text-end'>
+                            <Link to='/manageInventory' className='btn btn-outline-danger w-100'>Manage Inventories</Link>
+                        </div>
+                    </Form>         
             </div>
 
             

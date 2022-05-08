@@ -1,0 +1,23 @@
+.footer-container {
+    background-color: #505e5d;
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    
+}
+
+.logo-container p {
+    text-decoration: underline;
+}
+
+.logo-container a img {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+}
+@media only screen and (max-width: 576px) {
+    .footer-container{
+        position: static;
+        width: 100%;
+    }
+}

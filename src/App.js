@@ -9,10 +9,11 @@ import ItemDetail from './Page/ItemDetail/ItemDetail';
 import RequireAuth from './Page/RequireAuth.js/RequireAuth';
 import ManageItem from './Page/ManageItem/ManageItem';
 import AddItem from './Page/AddItem/AddItem';
+import Footer from './Page/Shared/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -29,6 +30,7 @@ function App() {
         <Route path='signup' element={<SignUp></SignUp>}></Route>
         
       </Routes>
+      <Footer></Footer>
      
     </div>
   );

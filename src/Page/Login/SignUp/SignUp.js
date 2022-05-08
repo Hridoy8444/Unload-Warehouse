@@ -4,14 +4,15 @@ import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import googleLogo from '../../../Images/Logo/googleLogo.png';
+import loginPng from '../../../Images/Login/loginPng.png';
 
 const SignUp = () => {
-    const [authUser, loading, ] = useAuthState(auth);
+    const [authUser, loading,] = useAuthState(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    
+
     const navigate = useNavigate();
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
@@ -19,15 +20,15 @@ const SignUp = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle] = useSignInWithGoogle(auth)
-    
-
-    
 
 
-   
+
+
+
+
     const handleEmailBlur = event => {
         setEmail(event.target.value);
     }
@@ -42,25 +43,27 @@ const SignUp = () => {
     }
     const handleToSubmit = event => {
         event.preventDefault();
-        if(password !== confirmPassword){
+        if (password !== confirmPassword) {
             setError('Your Password are not match');
             return;
         }
-        if(password.length < 6){
+        if (password.length < 6) {
             setError('Your password is short');
             return;
         }
-        
+
         createUserWithEmailAndPassword(email, password);
-         alert('send email')
+        alert('send email')
     }
     const navigateToLogin = () => {
         navigate('/register')
-    }    
+    }
     return (
-        <div>
-
-            <div className='w-50 mx-auto'>
+        <div className='d-flex'>
+            <div>
+            <img className='m-5' height={350} src={loginPng} alt="" />
+            </div>
+            <div className='w-50 mx-auto login-container'>
                 <h2 className='text-success mt-2 text-center'>Please Register!</h2>
                 <Form onSubmit={handleToSubmit} >
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -69,28 +72,28 @@ const SignUp = () => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control className='input-field' onBlur={handleEmailBlur} type="email" name='email' placeholder="Enter email" required/>
-                        
+                        <Form.Control className='input-field' onBlur={handleEmailBlur} type="email" name='email' placeholder="Enter email" required />
+
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control className='input-field' onBlur={handlePasswordBlur} type="password" name='password' placeholder="Password"required/>
+                        <Form.Control className='input-field' onBlur={handlePasswordBlur} type="password" name='password' placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control className='input-field' onBlur={handleConfirmPasswordBlur} type="password" name='confirmPassword' placeholder="confirmPassword" required/>
+                        <Form.Control className='input-field' onBlur={handleConfirmPasswordBlur} type="password" name='confirmPassword' placeholder="confirmPassword" required />
                     </Form.Group>
 
-                    <p style={{color: 'red'}}>{error}</p>
-                    <Button className='input-field field-color' style={{width:  '100%', padding: '10px'}} variant="primary" type="Register">
+                    <p style={{ color: 'red' }}>{error}</p>
+                    <Button className='input-field field-color' style={{ width: '100%', padding: '10px' }} variant="primary" type="Register">
                         Register
                     </Button>
                 </Form>
                 <p>Already have an account? <Link to={'/login'} className='text-primary text-decoration-none' onClick={navigateToLogin}>Please Login</Link></p>
-                <div>
-                    <p onClick={() => signInWithGoogle()} className='social-media-container'><img  height={32} src={googleLogo} alt="" /> <small>Continue With Google</small></p>
-                    
+                <div className='w-50 mx-auto'>
+                    <p onClick={() => signInWithGoogle()} className='social-media-container'><img height={32} src={googleLogo} alt="" /> <small>Continue With Google</small></p>
+
                 </div>
             </div>
         </div>
