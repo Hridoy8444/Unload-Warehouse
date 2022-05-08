@@ -10,6 +10,7 @@ import RequireAuth from './Page/RequireAuth.js/RequireAuth';
 import ManageItem from './Page/ManageItem/ManageItem';
 import AddItem from './Page/AddItem/AddItem';
 import Footer from './Page/Shared/Footer/Footer';
+import MyItem from './Page/MyItem/MyItem';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/myitem' element={<RequireAuth>
+          <MyItem></MyItem>
+        </RequireAuth>}></Route>
         
       </Routes>
       <Footer></Footer>

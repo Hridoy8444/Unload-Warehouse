@@ -20,6 +20,7 @@ const Header = () => {
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/manage">Manage Item</Nav.Link>
                             <Nav.Link href="/additem">Add Item</Nav.Link>
+                            <Nav.Link href="/myitem">My Item</Nav.Link>
                             {
                                 user ? 
                                 <Nav.Link onClick={handleLogOut} href="/login">logout</Nav.Link>
