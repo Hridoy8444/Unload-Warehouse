@@ -11,7 +11,7 @@ const Items = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-center'>Items: {items.length}</h2>
+            <h2 className='text-center'>Items</h2>
             <div className='row container mx-auto ms-4'>
                 {
                     items.slice(0, 6).map(item => <Item
