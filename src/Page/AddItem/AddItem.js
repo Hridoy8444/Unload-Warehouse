@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
+
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
@@ -25,7 +26,7 @@ const AddItem = () => {
                 console.log(result);
             
         })
-        navigate('/manage');
+        navigate('/manage')
 
         
     };
