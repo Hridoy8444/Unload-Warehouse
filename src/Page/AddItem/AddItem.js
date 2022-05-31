@@ -1,12 +1,14 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
 const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
     const onSubmit = data => {
         console.log(data);
         const url = `https://shrouded-dusk-31144.herokuapp.com/item`;
@@ -23,6 +25,7 @@ const AddItem = () => {
                 console.log(result);
             
         })
+        navigate('/manage');
 
         
     };
